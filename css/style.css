@@ -1,0 +1,367 @@
+@charset "UTF-8";
+
+/* ID・クラス名 
+
+<header id="top">
+<div class="header_inner">
+<h1 class="logo_full">
+<nav class="gnav">
+<main class="container">
+<div class="top_main_img">
+<h2 class="catchcopy">
+<h2 id="buy" class="title">
+<h2 id="color_select" class="title">
+<ul class="colors">
+
+*/
+
+
+/* color設定・変数 */
+
+:root {
+  --c_main: #16326A;
+  --c_sub: #4187d8;
+  --c_accent: #F39800;
+  --c_black: #333333;
+  --c_light-gray: #dddddd;
+  --c_white: #FFFFFF;
+
+  --w-main-c: 980px;
+  /* 最大コンテンツ幅設定 */
+}
+
+
+
+/*----------------------------------------
+	共通
+----------------------------------------*/
+
+body{
+    font-family: 'M PLUS Rounded 1c','Kosugi Maru','sans-serif'; 
+    font-size: medium;
+    font-weight: 700;
+    line-height: 1.7;
+    color: var(--c_main);
+
+    background-color: var(--c_white);
+    background-image: url(../img/bg.png);
+    background-position: 85vw;
+    background-repeat: repeat-y;
+}/* フォントと背景の設定 */
+
+p{
+    font-family: 'Kosugi Maru','sans-serif';
+    font-weight: 400;
+    font-style: normal;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+a{
+    color: var(--c_sub) ;
+    text-decoration: none;
+}
+a:hover{
+    color: var(--c_accent);
+}
+
+h2{
+    font-family: 'M PLUS Rounded 1c','Kosugi Maru','sans-serif';
+    font-style: normal;
+    font-weight: 700;
+}
+
+h2.title{
+    padding: 20px 0px;
+    font-size: x-large;
+}
+
+h2.title::before{
+    content: "";
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    vertical-align: middle;
+    background-image: url(../img/icon_ribbon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}/* h2アイコン */
+
+
+.attention{
+    color: var(--c_accent);
+    font-size: large;
+    text-decoration: underline double 1px var(--c_accent);
+}/* テキスト強調 強 */
+
+.st_under{
+    text-decoration: underline solid 1px;
+}/* テキスト強調 弱 */
+
+
+
+/*----------------------------------------
+	ヘッダー
+----------------------------------------*/
+
+header{
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--c_main);
+    padding: 10px 0;
+}
+
+/* ヘッダー内側 */
+.header_inner{
+    display: flex;
+    max-width: var(--w-main-c);
+    /* max-width: 980px; */
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo_full{
+    display: block;
+    max-width: 300px;
+    min-width: 150px;
+}
+/* ロゴとメニューのサイズを決めておく */
+/* →レスポンシブ用に画像が小さくなるタイミングを決められる */
+
+
+/*----------------------------------------
+	hamburger
+----------------------------------------*/
+/* ハンバーガーの形 */
+.hamburger {
+  display: grid;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 20% 0 0 20%;
+  border: 0;
+  background: var(--c_sub);
+  cursor: pointer;
+}
+.hamburger__line {
+  position: relative;
+  width: 25px;
+  height: 2px;
+  background: var(--c_white);
+}
+.hamburger__line::before,
+.hamburger__line::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--c_white);
+  transition: transform 0.3s;
+}
+.hamburger__line::before {
+  top: -8px;
+}
+.hamburger__line::after {
+  bottom: -8px;
+}
+/*閉じる*/
+/*aria-expandedの状態でスタイルを適用するように変更*/
+.hamburger[aria-expanded="true"] .hamburger__line{
+  background: transparent;
+}
+.hamburger[aria-expanded="true"] .hamburger__line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.hamburger[aria-expanded="true"] .hamburger__line::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/*----------------------------------------
+	gnav
+----------------------------------------*/
+/* ヘッダー_gナビ */
+
+/* .gnav a{
+    color: var(--c_white);
+} */
+
+/* .gnav ul{
+    display: flex;
+    gap: 2%;
+    padding: 0 2%;
+}
+
+.gnav ul li{
+    width: 110px;
+    white-space: nowrap;
+    text-align: center;
+    background-color: var(--c_white);
+    border-radius: 15px;
+}
+
+.gnav a{
+    font-size: small;
+} */
+
+/* .gnav__link {
+  color: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+} */
+.gnav__link:hover {
+  color:var(--c_accent);
+}
+
+/* スマホ用 */
+@media (max-width: 991px) {
+  .gnav {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    z-index: 100;
+    width: 100%;
+    /*height: calc(100vh - 50px);後方互換のためのフォールバック*/
+    /*height: calc(100dvh - 50px);iOSでも状況に応じて常に高さいっぱいに広げる*/
+    background: var(--c_white);
+    overflow-y: auto; /*中身があふれたら縦スクロール*/
+    -webkit-overflow-scrolling: touch; /*iOSで慣性スクロール有効化*/
+  }
+  .gnav__list {
+    border-top: 1px solid var(--c_sub);
+    flex-direction: column;
+  }
+  .gnav__item {
+    border-bottom: 1px solid var(--c_sub);
+    text-align: end;
+  }
+  .gnav__link {
+    display: block;
+    padding: 15px 20px;
+  }
+  /*現在位置の指定をaria-current属性に変更*/
+  .gnav__link[aria-current] {
+    padding-left: 15px;
+    border-left: 5px solid var(--c_main);
+  }
+  .logo_full{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* PC用 */
+@media (min-width: 992px) {
+  .gnav {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  .gnav ul li{
+    width: 130px;
+    white-space: nowrap;
+    text-align: center;
+    background-color: var(--c_white);
+    border-radius: 10px;
+    margin: 0 5px;
+  }/* 追加記載　ボタン */
+
+  .gnav__list {
+    display: flex;
+  }
+  .gnav__link {
+    display: block;
+    padding: 0.15em;
+  }
+
+  /*現在位置の指定をaria-current属性に変更*/
+  .gnav__link[aria-current]::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--c_main);
+  }
+}
+
+
+
+/*----------------------------------------
+	メイン
+----------------------------------------*/
+/* コンテンツ幅 */
+.container{
+    max-width: var(--w-main-c);
+    margin: 0 auto;
+}
+.mini_container{
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+
+/* ナビ_カラーメニュー */
+.colors{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.colors li{
+    /* border: var(--c_light-gray) solid 1px; */
+/* 仮CSS */
+    display: block;
+    text-transform: uppercase;/* 大文字にする */
+    
+}
+.colors li img{
+    width: 25px;
+    height: 25px;
+}
+.colors a:hover{
+    opacity: 0.7;
+}
+
+
+/*----------------------------------------
+	フッター
+----------------------------------------*/
+
+footer{
+    display: block;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--c_main);
+    color: var(--c_white);
+    text-align: center;
+    padding: 20px 0;
+}
+footer p::before{
+    content: "";
+    display: inline-flex;
+    width: 3em;
+    height: 3em;
+    margin-right: 1vw;
+    vertical-align: -1.5em;
+    background-image: url(../img/icon_whipcase.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(-20deg);
+}

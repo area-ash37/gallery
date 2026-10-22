@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	ヘッダー追加部分
+----------------------------------------*/
+
+/* テーマ見出し */
+h2.select_items{
+    font-size: 1.7rem;
+    border-top: dotted var(--c_accent) 4px ;
+    border-bottom: dotted var(--c_accent) 4px;
+    color: var(--c_main);
+    text-align: center;
+    margin-top: 2vw;
+    margin-top: 2vw;
+}
+
+/* 表示サイズ変更 */
+.size_change{
+    display: flex;
+    justify-content: end;
+    gap: 2%;
+    margin-right: 2vw;
+}
+
+/* サイズ変更ボタン */
+.size_change button{
+    color: var(--c_white);
+    background-color: var(--c_sub);
+    border-radius: 0 0 5px 5px ;
+    padding: 0 3%;
+    cursor: pointer;
+}
+
+
+/*----------------------------------------
+	カードデザイン
+----------------------------------------*/
+
+/* カードリスト全体 */
+
+ul.cardlist{
+    display: grid;
+    justify-content: center;
+    margin: 2% 0;
+    gap: 10px 20px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+/* Lサイズ用
+ul.cardlist{
+    grid-template-columns: repeat(2,1fr);
+} */
+
+/* カードデザイン */
+
+li.card{
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    border: solid 1px var(--c_light-gray);
+    border-radius: 10px;
+    background-color: var(--c_white);
+}
+
+/* Lサイズ表示用_クラス切り替え */
+/* li.card_L{
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    border: solid 1px var(--c_light-gray);
+    border-radius: 10px;
+    background-color: var(--c_white);
+}
+@media (min-width: 992px) {
+li.card_L{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px var(--c_light-gray);
+    background-color: var(--c_white);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: medium;
+}
+li.card_L img{
+    max-width: 80%;
+}
+} */
+ 
+
+/*----------------------------------------
+	カード内テキスト
+----------------------------------------*/
+
+/* アイテムナンバー */
+.card_no{
+    text-align: center;
+    font-size: 1.3rem;
+}/* フォントサイズはJSで変更 */
+
+/* 地テキスト */
+.cardlist p{
+    font-size: small;
+    line-height: 1.7;
+    padding: 2% 4% 0%;
+    display: block;
+}
+
+/* 小見出し */
+.item_tag,.item_type{
+    display: inline-block;
+    padding: 0px 10px;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+
+.item_tag{
+    color: var(--c_white);
+    background-color: var(--c_main);
+}
+
+.item_type{
+    color: var(--c_main);
+    background-color: var(--c_light-gray);
+}
