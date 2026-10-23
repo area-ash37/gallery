@@ -17,8 +17,13 @@
         href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/hamburger_script.js"></script>
+    <script src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
 
 </head>
@@ -29,7 +34,9 @@
 
         <div class="header_inner">
             <!-- ロゴ -->
-            <h1 class="logo_full"><img src="img/logo_set.svg" alt="YAMATO's Factory ロゴ"></h1>
+            <a href="index.html">
+                <h1 class="logo_full"><img src="img/logo_set.svg" alt="YAMATO's Factory ロゴ"></h1>
+            </a>
 
             <!-- ナビ -->
 
@@ -44,9 +51,9 @@
             <!-- ⑥動的要素の状態：自身の開閉状態をaria-hiddenで示すが、SPレイアウトの場合のみなのでHTMLではなくJSで動的に付与 -->
             <nav id="gnav" class="gnav" aria-label="メインメニュー">
                 <ul class="gnav__list">
-                    <li class="gnav__item"><a href="#color_select" class="gnav__link">作品を探す</a></li>
-                    <li class="gnav__item"><a href="#" class="gnav__link">はじめての方へ</a></li>
-                    <li class="gnav__item"><a href="#" class="gnav__link">ご購入について</a></li>
+                    <li class="gnav__item"><a href="select.html" class="gnav__link">作品を探す</a></li>
+                    <li class="gnav__item"><a href="info_first.html" class="gnav__link">はじめての方へ</a></li>
+                    <li class="gnav__item"><a href="info_buy.html" class="gnav__link">ご購入について</a></li>
                     <li class="gnav__item"><a href="#" class="gnav__link">お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -57,37 +64,35 @@
     <main>
         <div class="container">
             <!-- メインビジュアル -->
-            <div class="top_main_img">
-                <img src="img/top_main1.jpg" alt="" width="100%">
-                <h2 class="catchcopy">推しのお守り、お仕立てします</h2>
+             
+            <div id="slideshow">
+                <div class="your-class">
+                    <div><img src="img/top_main1.jpg" alt=""></div>
+                    <div><img src="img/top_main2.jpg" alt=""></div>
+                    <div><img src="img/top_main3.jpg" alt=""></div>
+                </div>
+                <div>
+                    <h2 class="catchcopy">推しのお守り、お仕立てします</h2>
+                </div>
             </div>
 
-            <!-- 各SNSなどのアイコンを入れる -->
-             <p class="attention" style="font-size: xx-large;">SNSとメルカリアイコンを入れる！！</p>
-
+            <!-- <div class="top_main_img">
+                <img src="img/top_main1.jpg" alt="" width="100%">
+                <h2 class="catchcopy">推しのお守り、お仕立てします</h2>
+            </div> -->
 
             <div class="mini_container">
-                <h2 class="title">当サイトについて</h2>
+                <h2 class="title info">当サイトについて</h2>
                 <p>
                     トレカケースのハンドメイド作家、YAMATO のギャラリーです。<br>
                     こちらでは今までのすべての制作物をご覧いただけます。（※現在は一部の展示のみとなっておりますが、随時更新予定です）<br>
                     なお、すべて一点物のため展示作品には販売済みの物も含まれます。
                 </p>
 
-
-                <h2 id="buy" class="title">ご購入について</h2>
-                <p>
-                    <strong class="attention">作品の販売はメルカリにて行っております。</strong><br>
-                    お手数ですがメルカリよりご購入ください。<br>
-                    なお、作品の販売状況について当サイトとは連携しておりませんので、あらかじめご了承ください。<br>
-                    ただし、<strong class="st_under">ギャラリー内の作品番号とメルカリの作品番号は同一</strong>のため、お探しの際にお役立ていただければ幸いです。
-                </p>
-
-
                 <section>
-                    <h2 id="color_select" class="title">メインカラーから選ぶ</h2>
+                    <h2 id="color_select" class="title pic">メインカラーから選ぶ</h2>
                     <ul class="colors">
-                        <li><a href="01_select_list/c_red.html"><img src="img/color/color_red.png" alt="">red</a></li>
+                        <li><a href="c_red.html"><img src="img/color/color_red.png" alt="">red</a></li>
                         <li><a href="#"><img src="img/color/color_orange.png" alt="">orange</a></li>
                         <li><a href="#"><img src="img/color/color_yellow.png" alt="">yellow</a></li>
                         <li><a href="#"><img src="img/color/color_green.png" alt="">green</a></li>
@@ -99,22 +104,33 @@
                         <li><a href="#"><img src="img/color/color_black.png" alt="">black</a></li>
                         <li><a href="#"><img src="img/color/color_white.png" alt="">white</a></li>
                     </ul>
-                    <p><a href="01_select_list/all.html">全部見る</a></p>
+                    <ul class="colors">
+                        <li><a href="#"><img src="img/color/color_all.png" alt="">全部まとめて見る</a></li>
+                    </ul>
                 </section>
 
-                <h2 id="t_select" class="title">テイストから選ぶ</h2>
+                <h2 id="t_select" class="title pic">テイストから選ぶ</h2>
                 <section>
                     <ul class="colors">
                         <li>COMING SOON!!</li>
                     </ul>
                 </section>
 
-                <h2 id="m_select" class="title">モチーフから選ぶ</h2>
+                <h2 id="m_select" class="title pic">モチーフから選ぶ</h2>
                 <section>
                     <ul class="colors">
                         <li>COMING SOON!!</li>
                     </ul>
                 </section>
+
+                <h2 id="buy" class="title info">ご購入について</h2>
+                <p>
+                    <strong class="attention">作品の販売はメルカリにて行っております。</strong><br>
+                    お手数ですがメルカリよりご購入ください。<br>
+                    なお、作品の販売状況について当サイトとは連携しておりませんので、あらかじめご了承ください。<br>
+                    ただし、<strong class="st_under">ギャラリー内の作品番号とメルカリの作品番号は同一</strong>のため、お探しの際にお役立ていただければ幸いです。
+                </p>
+
 
             </div>
         </div>
@@ -123,9 +139,20 @@
 
     <!-- フッター -->
     <footer>
-        <p>&copy; YAMATO's FACTORY</p>
+        <!-- 各リンクアイコン -->
+        <div class="link_box">
+            <p class="sub_small">※各外部サイトが開きます→</p>
+            <a href="https://jp.mercari.com/user/profile/426958884">
+                <img src="img/link/mercari.png" alt="メルカリへのリンク" class="link_icon"></a>
+            <a href="https://x.com/yamato073">
+                <img src="img/link/x.png" alt="Xへのリンク" class="link_icon"></a>
+            <a href="https://www.instagram.com/yamato_hoippu">
+                <img src="img/link/Instagram.png" alt="" class="link_icon"></a>
+        </div>
+        <div class="footer_inner">
+            <p>&copy; YAMATO's FACTORY</p>
+        </div>
     </footer>
-
 
 
 </body>

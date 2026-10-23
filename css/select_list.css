@@ -4,7 +4,7 @@
 	ヘッダー追加部分
 ----------------------------------------*/
 
-/* テーマ見出し */
+/* 選択テーマ見出し */
 h2.select_items{
     font-size: 1.7rem;
     border-top: dotted var(--c_accent) 4px ;
@@ -15,7 +15,7 @@ h2.select_items{
     margin-top: 2vw;
 }
 
-/* 表示サイズ変更 */
+/* サムネ表示サイズ変更 */
 .size_change{
     display: flex;
     justify-content: end;
@@ -30,6 +30,11 @@ h2.select_items{
     border-radius: 0 0 5px 5px ;
     padding: 0 3%;
     cursor: pointer;
+}
+
+.size_change button:hover{
+    transform: scale(1.5);
+    transition-duration: .4s;
 }
 
 
@@ -61,6 +66,7 @@ li.card{
     border: solid 1px var(--c_light-gray);
     border-radius: 10px;
     background-color: var(--c_white);
+    overflow: hidden;
 }
 
 /* Lサイズ表示用_クラス切り替え */
@@ -99,6 +105,7 @@ li.card_L img{
     font-size: 1.3rem;
 }/* フォントサイズはJSで変更 */
 
+
 /* 地テキスト */
 .cardlist p{
     font-size: small;
@@ -107,19 +114,18 @@ li.card_L img{
     display: block;
 }
 
-/* 小見出し */
+
+/* 分類タグ、サイズ用ボタン */
 .item_tag,.item_type{
     display: inline-block;
     padding: 0px 10px;
     border-radius: 5px;
     line-height: 1.5;
 }
-
 .item_tag{
     color: var(--c_white);
     background-color: var(--c_main);
 }
-
 .item_type{
     color: var(--c_main);
     background-color: var(--c_light-gray);

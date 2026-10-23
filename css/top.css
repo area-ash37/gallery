@@ -4,22 +4,31 @@
 	トップ専用
 ----------------------------------------*/
 
-
 /* メインビジュアル */
-.top_main_img{
+
+/* スライドショー */
+#slideshow{
+    position: relative;
+}
+
+/* .top_main_img{
     display: block;
     position: relative;
     margin-top: 20px;
-}
+} */
+
+/* catchcopy */
 h2.catchcopy{
     position: absolute;
     z-index: 1;
-    bottom: 10%;
+    /* 場所 */
+    bottom: 15%;
     right: 0;
     margin-right: 10px;
     margin-left: 10px;
     font-size: xx-large;
     color: var(--c_white);
+    /* アンダーラインとシャドウ */
     text-decoration:underline solid 2px;
     text-underline-offset: 0.2em;
     text-shadow: 2px 3px 0px rgb(9, 58, 117), 6px 7px 15px rgb(46, 73, 105);
@@ -27,6 +36,6 @@ h2.catchcopy{
 /* 600px以下に適用(max-width) */
 @media screen and (max-width: 500px) {
   h2.catchcopy { 
-    font-size: x-large;
-    bottom: 0%; }
+    font-size: larger;
+    bottom: 10%; }
 }

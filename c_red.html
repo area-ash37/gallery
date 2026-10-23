@@ -23,27 +23,32 @@
 
 </head>
 
-<body>
+<body> 
     <!-- ヘッダー -->
     <header id="top">
 
         <div class="header_inner">
             <!-- ロゴ -->
-            <a href="../index.html">
-                <h1 class="logo_full"><img src="../img/logo_set.svg" alt="YAMATO's Factory ロゴ"></h1>
+            <a href="index.html">
+                <h1 class="logo_full"><img src="img/logo_set.svg" alt="YAMATO's Factory ロゴ"></h1>
             </a>
+    
+                <!-- ナビ -->
 
-            <!-- ナビ_ハンバーガー -->
+            <!-- ②アクセシブルな名前：名前が必須のbutton要素に明示的なラベルがないのでaria-labelを付与（開く／閉じるはJSで変更）-->
+            <!-- ⑥動的要素の状態：操作対象であるグロナビをaria-controlesで指定、開閉の初期状態をaria-expandedで指定-->
             <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false">
+                <!-- ②アクセシブルな名前,④装飾的要素：今回はbutton要素自体にaria-labelを付与しているのでラインの方は隠す -->
                 <span class="hamburger__line" aria-hidden="true"></span>
             </button>
 
-            <!-- ナビ_メニュー -->
+            <!-- ②アクセシブルな名前：下層にはnav要素でパンくずがあるので、aria-labelでナビゲーション名を明示 -->
+            <!-- ⑥動的要素の状態：自身の開閉状態をaria-hiddenで示すが、SPレイアウトの場合のみなのでHTMLではなくJSで動的に付与 -->
             <nav id="gnav" class="gnav" aria-label="メインメニュー">
                 <ul class="gnav__list">
-                    <li class="gnav__item"><a href="#" class="gnav__link">作品を探す</a></li>
+                    <li class="gnav__item"><a href="#color_select" class="gnav__link">作品を探す</a></li>
                     <li class="gnav__item"><a href="#" class="gnav__link">はじめての方へ</a></li>
-                    <li class="gnav__item"><a href="#" class="gnav__link">ご購入について</a></li>
+                    <li class="gnav__item"><a href="info_buy.html" class="gnav__link">ご購入について</a></li>
                     <li class="gnav__item"><a href="#" class="gnav__link">お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -58,6 +63,7 @@
 
                 <!-- カード表示サイズ選択タブ -->
                 <div class="size_change">
+                    <span class="sub_text">view size→</span>
                     <button class="card_s">S</button>
                     <button class="card_m">M</button>
                     <button class="card_l">L</button>
@@ -70,7 +76,7 @@
                 <ul class="cardlist">
 
                     <li class="card">
-                        <img src="img/446_rb.JPG" alt="">
+                        <img src="img/items/446_rb.jpg" alt="">
                         <div class="textarea"><!-- Lサイズ用クラス -->
 
                             <h4 class="card_no">No.446</h4>
@@ -94,7 +100,7 @@
                     </li>
 
                     <li class="card">
-                        <img src="../img/items/446_rb.jpg" alt="">
+                        <img src="img/items/446_rb.jpg" alt="">
                         <div class="textarea"><!-- Lサイズ用クラス -->
 
                             <h4 class="card_no">No.446</h4>
@@ -118,7 +124,7 @@
                     </li>
 
                     <li class="card">
-                        <img src="../img/items/446_rb.jpg" alt="">
+                        <img src="img/items/446_rb.jpg" alt="">
                         <div class="textarea"><!-- Lサイズ用クラス -->
 
                             <h4 class="card_no">No.446</h4>
@@ -142,7 +148,7 @@
                     </li>
 
                     <li class="card">
-                        <img src="../img/items/446_rb.jpg" alt="">
+                        <img src="img/items/446_rb.jpg" alt="">
                         <div class="textarea"><!-- Lサイズ用クラス -->
 
                             <h4 class="card_no">No.446</h4>
@@ -166,7 +172,7 @@
                     </li>
 
                     <li class="card">
-                        <img src="../img/items/446_rb.jpg" alt="">
+                        <img src="img/items/446_rb.jpg" alt="">
                         <div class="textarea"><!-- Lサイズ用クラス -->
 
                             <h4 class="card_no">No.446</h4>
@@ -204,7 +210,17 @@
 
     <!-- フッター -->
     <footer>
-        <p>&copy; YAMATO's FACTORY</p>
+        <!-- 各リンクアイコン -->
+        <div class="link_box">
+            <p class="sub_small">※各外部サイトが開きます→</p>            
+            <a href="https://jp.mercari.com/user/profile/426958884">
+                <img src="img/link/mercari.png" alt="メルカリへのリンク" class="link_icon"></a>
+            <a href="https://x.com/yamato073">
+                <img src="img/link/x.png" alt="Xへのリンク" class="link_icon"></a>
+            <a href="https://www.instagram.com/yamato_hoippu">
+                <img src="img/link/Instagram.png" alt="" class="link_icon"></a>
+        </div>
+        <div class="footer_inner"><p>&copy; YAMATO's FACTORY</p></div>
     </footer>
 
 

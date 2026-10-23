@@ -1,5 +1,16 @@
 $(function () {
 
+// スライドショー（slick）
+
+$(document).ready(function(){
+  $('.your-class').slick({
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  });
+});
+
+
 // 
 // アイテムリストページ
 // 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAMATO's Factory</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/top.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/hamburger_script.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header id="top">
+
+        <div class="header_inner">
+            <!-- ロゴ -->
+            <a href="index.html">
+                <h1 class="logo_full"><img src="img/logo_set.svg" alt="YAMATO's Factory ロゴ"></h1>
+            </a>
+
+            <!-- ナビ -->
+
+            <!-- ②アクセシブルな名前：名前が必須のbutton要素に明示的なラベルがないのでaria-labelを付与（開く／閉じるはJSで変更）-->
+            <!-- ⑥動的要素の状態：操作対象であるグロナビをaria-controlesで指定、開閉の初期状態をaria-expandedで指定-->
+            <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false">
+                <!-- ②アクセシブルな名前,④装飾的要素：今回はbutton要素自体にaria-labelを付与しているのでラインの方は隠す -->
+                <span class="hamburger__line" aria-hidden="true"></span>
+            </button>
+
+            <!-- ②アクセシブルな名前：下層にはnav要素でパンくずがあるので、aria-labelでナビゲーション名を明示 -->
+            <!-- ⑥動的要素の状態：自身の開閉状態をaria-hiddenで示すが、SPレイアウトの場合のみなのでHTMLではなくJSで動的に付与 -->
+            <nav id="gnav" class="gnav" aria-label="メインメニュー">
+                <ul class="gnav__list">
+                    <li class="gnav__item">
+                        <a href="select.html" class="gnav__link">作品を探す</a></li>
+                    <li class="gnav__item">
+                        <a href="info_first.html" class="gnav__link">はじめての方へ</a></li>
+                    <li class="gnav__item">
+                        <a href="info_buy.html" class="gnav__link">ご購入について</a></li>
+                    <li class="gnav__item">
+                        <a href="info_faq.html" class="gnav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メイン -->
+    <main>
+        <div class="container">
+            <!-- メインビジュアル -->
+            <div class="top_main_img">
+                <img src="img/top_main1.jpg" alt="">
+            </div>
+
+            <div class="mini_container">
+
+                <h2 id="buy" class="title info">ご購入について</h2>
+                <p>
+                    <strong class="attention">作品の販売はメルカリにて行っております。</strong><br>
+                    大変お手数ですが、メルカリを通してご購入をお願いいたします。<br>
+                    なお、作品の販売状況について当サイトとは連携しておりません。販売済みの場合もございますので、あらかじめご了承ください。<br>
+                    ただし、<strong class="st_under">ギャラリー内の作品番号とメルカリの作品番号は同一</strong>のため、お探しの際にお役立ていただければ幸いです。
+                </p>
+
+                <h2 id="buy" class="title info">欲しいデザインが売り切れの時は？</h2>
+                <p>
+                    同一デザインのものをリクエストすることができます。<br>
+                    <strong class="st_under">※ただし、ハンドメイドであることと、パーツや素材の在庫状況により、全く同じになるとは限りません。あらかじめご了承ください。</strong>
+                </p>
+
+                <h2 id="buy" class="title info">色違いや推しに合わせたデザインが欲しい！</h2>
+                <p>
+                    お好みのデザインの色違いや、推しやお好みに合わせたフルオーダーのデザインも承ります。お気軽にご相談ください。<br>
+                    <a href="info_faq.html">→お問い合わせはこちら</a>
+                </p>
+
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- フッター -->
+    <footer>
+        <!-- 各リンクアイコン -->
+        <div class="link_box">
+            <p class="sub_small">※各外部サイトが開きます→</p>            
+            <a href="https://jp.mercari.com/user/profile/426958884">
+                <img src="img/link/mercari.png" alt="メルカリへのリンク" class="link_icon"></a>
+            <a href="https://x.com/yamato073">
+                <img src="img/link/x.png" alt="Xへのリンク" class="link_icon"></a>
+            <a href="https://www.instagram.com/yamato_hoippu">
+                <img src="img/link/Instagram.png" alt="" class="link_icon"></a>
+        </div>
+        <div class="footer_inner"><p>&copy; YAMATO's FACTORY</p></div>
+    </footer>
+
+
+
+</body>
+
+</html>
