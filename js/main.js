@@ -1,61 +1,72 @@
 $(function () {
 
-// スライドショー（slick）
-
-$(document).ready(function(){
-  $('.your-class').slick({
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-  });
-});
+    // スライドショー（slick）はindex.htmlに直接記載
 
 
-// 
-// アイテムリストページ
-// 
-// デフォルト、サイズごとにクラスを作って付け替える！！！！！
-// 画像クリックでモーダルウィンドウを開きたい
-// 
+    ///////////////////////// 
+    // カードサイズ表示切替 
+    ////////////////////////
+
+    // 小にする（これでも動く！）
+    // クラスを持っているかifelseで確認　→　あったらそれをリムーブ
+    // そのあとつけたいクラスを付与
+    // $('.card_s').on('click', function () {
+    //     if ($('.cardsize').hasClass('cardlist_m')) {
+    //         $('.cardlist').removeClass('cardlist_m');
+    //     } else {
+    //         $('.cardlist').removeClass('cardlist_l');
+    //     }
+    //    $('.cardlist').addClass('cardlist_s');
+    // });
 
 
-    // カードリスト表示サイズ切替
-    // 小
+    // 小にする
     $('.card_s').on('click', function () {
-        // カラム変更
-        $('ul.cardlist').css('grid-template-columns', 'repeat(3,1fr)');
-        // タグ以外のテキストを見えなくする
-        $('.textarea_min').css('display', 'none');
-        // アイテムNOフォントサイズ変更
-        $('h4.card_no')
-        .css('font-size', '1rem');
+        // カードリストに下記のクラスがついていたら外す
+        $('.cardlist')
+            .removeClass('cardsize')
+            .removeClass('cardlist_m')
+            .removeClass('cardlist_l');
+            // 外した後に新しくクラスを付与する
+        $('.cardlist').addClass('cardlist_s');
     });
 
-    // 中
+
+    // 中にする
     $('.card_m').on('click', function () {
-        // カラム変更
-        $('ul.cardlist').css('grid-template-columns', 'repeat(2,1fr)');
-        // アイテムNOフォントサイズ変更
-        $('h4.card_no').css('font-size', '1.3rem');
-        // タグ以外のテキストを見せる
-        $('.textarea_min').css('display', 'block');
+        $('.cardlist')
+            .removeClass('cardsize')
+            .removeClass('cardlist_s')
+            .removeClass('cardlist_l');
+        $('.cardlist').addClass('cardlist_m');
     });
 
-    // 大
+    // 大にする
     $('.card_l').on('click', function () {
-        // カラム変更
-        $('ul.cardlist').css('grid-template-columns', 'repeat(1,1fr)');
-        //アイテムNOフォントサイズ変更
-        $('h4.card_no').css('font-size', '1.7rem');
-        // タグ以外のテキストを見せる
-        $('.textarea_min').css('display', 'block')
-        // // レイアウト可変
-        // $('li.card').remove('li.card');
-        // $('li.card').addClass('li.card_L');
+        $('.cardlist')
+            .removeClass('cardsize')
+            .removeClass('cardlist_s')
+            .removeClass('cardlist_m');
+        //  }
+        $('.cardlist').addClass('cardlist_l');
     });
 
 
+    // if文のダブル条件指定のテスト
+    // if (true || true) { console.log('test') }
 
+    //     // 大にする
+    // $('.card_l').on('click', function () {
+    //     // ifのダブル条件指定のやりかた　||　どちらかを持っていたらtrue
+    //     // if ($('.cardsize').hasClass('cardlist_s')
+    //     //     || $('.cardsize').hasClass('cardlist_m')
+    //     // ) {
+    //     $('.cardlist')
+    //         .removeClass('cardlist_s')
+    //         .removeClass('cardlist_m');
+    //     //  }
+    //     $('.cardlist').addClass('cardlist_l');
+    // });
 
 
 });
