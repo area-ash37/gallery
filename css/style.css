@@ -11,6 +11,7 @@
 <h2 class="catchcopy">
 <h2 id="buy" class="title">
 <h2 id="color_select" class="title">
+<h2 class="title info">
 <ul class="colors">
 
 */
@@ -31,17 +32,18 @@
 }
 
 
-
 /*----------------------------------------
 	共通
 ----------------------------------------*/
 
+/* 'M PLUS Rounded 1c',  */
+
 /* フォントと背景の設定 */
 body {
-  font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'sans-serif';
+  font-family: 'Kosugi Maru', 'sans-serif';
   font-size: medium;
-  font-weight: 700;
-  line-height: 1.7;
+  font-weight: 600;
+  line-height: 1.5;
   color: var(--c_main);
 
   background-color: var(--c_white);
@@ -50,6 +52,7 @@ body {
   background-repeat: repeat-y;
 }
 
+/* 他基本設定 */
 p {
   font-family: 'Kosugi Maru', 'sans-serif';
   font-weight: 400;
@@ -62,6 +65,8 @@ img {
 }
 
 a {
+  font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'sans-serif';
+  font-weight: 600;
   color: var(--c_sub);
   text-decoration: none;
 }
@@ -70,15 +75,25 @@ a:hover {
   color: var(--c_accent);
 }
 
+/* 本文内ボックス */
+div.mini_box {
+  margin: 3% 0;
+  padding: 3% 5%;
+  height: auto;
+  width: 100%;
+  border-radius: 20px;
+  border: var(--c_light-gray) solid 1px;
+}
+
 /* h2全体 */
 h2 {
-  font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'sans-serif';
+  font-family: 'Kosugi Maru', 'sans-serif';
   font-style: normal;
   font-weight: 600;
   line-height: 1.5rem;
 }
 
-/* 項目別見出し */
+/* h2項目別見出し（アイコン付き） */
 h2.title {
   padding: 40px 0px 20px;
   font-size: x-large;
@@ -95,12 +110,12 @@ h2.title::before {
   background-size: contain;
 }
 
-/* お知らせ系リボン */
+/* h2お知らせ系リボン */
 h2.title.info::before {
   background-image: url(../img/icon_ribbon2.svg);
 }
 
-/* 作品ページ用リボン */
+/* h2作品ページ用リボン */
 h2.title.pic::before {
   background-image: url(../img/icon_ribbon1.svg);
 }
@@ -110,14 +125,20 @@ h2.title.pic::before {
   color: var(--c_accent);
   font-size: large;
   text-decoration: underline double 1px var(--c_accent);
+  letter-spacing: 0.1em;
 }
 
 /* テキスト強調 弱 */
 .st_under {
   text-decoration: underline solid 1px;
+  letter-spacing: 0.1em;
 }
 
 /* 他テキスト装飾 */
+.text_small {
+  font-size: small;
+}
+
 .sub_text {
   font-family: 'sans-serif';
   color: var(--c_sub);
@@ -147,7 +168,7 @@ header {
 .header_inner {
   display: flex;
   max-width: var(--w-main-c);
-  /* max-width: 980px; */
+  /* max-width: 980px; ↑*/
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
@@ -228,34 +249,6 @@ header {
 ----------------------------------------*/
 /* ヘッダー_gナビ */
 
-/* .gnav a{
-    color: var(--c_white);
-} */
-
-/* .gnav ul{
-    display: flex;
-    gap: 2%;
-    padding: 0 2%;
-}
-
-.gnav ul li{
-    width: 110px;
-    white-space: nowrap;
-    text-align: center;
-    background-color: var(--c_white);
-    border-radius: 15px;
-}
-
-.gnav a{
-    font-size: small;
-} */
-
-/* .gnav__link {
-  color: inherit;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-} */
 .gnav__link:hover {
   color: var(--c_accent);
 }
@@ -324,7 +317,6 @@ header {
   }
 
   /* 追加記載　ボタン */
-
   .gnav__list {
     display: flex;
   }
@@ -396,14 +388,19 @@ header {
 /*----------------------------------------
 	フッター
 ----------------------------------------*/
+footer {
+  display: block;
+  bottom: 0;
+  width: 100%;
+  margin-top: 50px;
+}
 
-
-/* フッターの上の外部リンク */
+/* フッター上にある外部リンク */
 .link_box {
   display: flex;
   padding: 15px 20px;
   gap: 20px;
-  /* background-color: #F39800;  仮カラー */
+  /* background-color: #F39800; */
   max-width: calc(var(--w-main-c) * 0.85);
   margin: 0 auto;
   align-items: end;
@@ -420,16 +417,19 @@ header {
   transition-duration: .5s;
 }
 
-/* フッター */
+/* 本文中アイコンサイズ */
+.link_icon_small {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* フッター本体 */
 .footer_inner {
-  display: block;
-  bottom: 0;
-  width: 100%;
   background-color: var(--c_main);
   color: var(--c_white);
   text-align: center;
   padding: 20px 0;
-
 }
 
 .footer_inner p::before {
@@ -444,3 +444,6 @@ header {
   background-size: contain;
   transform: rotate(-20deg);
 }
+
+
+/* ギャラリーページ用のフッターCSSはselect_listに記載 */

@@ -1,113 +1,175 @@
 @charset "UTF-8";
 
 /*----------------------------------------
-	ヘッダー追加部分
+	ヘッダー追加_カードサイズ変更ボタン
 ----------------------------------------*/
 
-/* 選択テーマ見出し */
-h2.select_items{
-    font-size: 1.7rem;
-    border-top: dotted var(--c_accent) 4px ;
-    border-bottom: dotted var(--c_accent) 4px;
-    color: var(--c_main);
-    text-align: center;
-    margin-top: 2vw;
-    margin-top: 2vw;
-}
-
-/* サムネ表示サイズ変更 */
-.size_change{
+/* ボタンdiv */
+.size_change {
     display: flex;
     justify-content: end;
     gap: 2%;
-    margin-right: 2vw;
 }
 
 /* サイズ変更ボタン */
-.size_change button{
+.size_change button {
     color: var(--c_white);
     background-color: var(--c_sub);
-    border-radius: 0 0 5px 5px ;
+    height: 48px;
+    border-radius: 0 0 20% 20%;
     padding: 0 3%;
     cursor: pointer;
 }
 
-.size_change button:hover{
-    transform: scale(1.5);
+.size_change button:hover {
+    transform: scale(1.2);
+    /* transform: translateY(5px); */
+    background: var(--c_accent);
     transition-duration: .4s;
 }
 
 
 /*----------------------------------------
-	カードデザイン
+	選択中のテーマ見出し
 ----------------------------------------*/
 
-/* カードリスト全体 */
+h2.select_items {
+    font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'sans-serif';
+    font-size: 1.5rem;
+    line-height: 1.7em;
+    border-top: dotted var(--c_accent) 4px;
+    border-bottom: dotted var(--c_accent) 4px;
+    color: var(--c_main);
+    text-align: center;
+    margin-top: 2vw;
+    margin-bottom: 20px;
+}
 
-ul.cardlist{
+/*----------------------------------------
+	フッターのページネーション
+----------------------------------------*/
+
+.pagination {
+    display: inline-block;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 150px;
+}
+
+.pagination a {
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.pagination a.active {
+    color: var(--c_white);
+    background-color: var(--c_sub);
+    border-radius: 50%;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: var(--c_light-gray);
+    border-radius: 50%;
+}
+
+
+
+/*----------------------------------------
+	カード並び順とサイズ調整
+----------------------------------------*/
+
+/* カードリスト一覧_ベース */
+
+ul.cardlist {
     display: grid;
     justify-content: center;
     margin: 2% 0;
     gap: 10px 20px;
-    grid-template-columns: repeat(2,1fr);
 }
 
-/* Lサイズ用
-ul.cardlist{
-    grid-template-columns: repeat(2,1fr);
-} */
+/* default ２カラム＆ALLテキスト表示＝Mと同じ*/
+ul.cardsize {
+    grid-template-columns: repeat(2, 1fr);
+}
 
-/* カードデザイン */
+/*----------------------------------------
+	カード内デザイン　※サイズ変更対応部分
+----------------------------------------*/
 
-li.card{
+/* カードデザイン_ベース */
+/* カード全体 */
+li.card {
     display: grid;
-    grid-row: span 4;
-    grid-template-rows: subgrid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
     border: solid 1px var(--c_light-gray);
     border-radius: 10px;
     background-color: var(--c_white);
     overflow: hidden;
+    /* 親グリッドは４行 */
 }
 
-/* Lサイズ表示用_クラス切り替え */
-/* li.card_L{
+li.card img {
+    grid-row: 1;
+    display: block;
+    /* 画像は一番上 */
+}
+
+/* カード内テキスト部分 */
+li .textarea {
     display: grid;
-    grid-row: span 4;
     grid-template-rows: subgrid;
-    border: solid 1px var(--c_light-gray);
-    border-radius: 10px;
-    background-color: var(--c_white);
+    grid-row: span 3;
+    /* 子グリッドの中を3分割 */
 }
-@media (min-width: 992px) {
-li.card_L{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px var(--c_light-gray);
-    background-color: var(--c_white);
-    border-radius: 10px;
-    overflow: hidden;
-    font-size: medium;
-}
-li.card_L img{
-    max-width: 80%;
-}
-} */
- 
 
 /*----------------------------------------
 	カード内テキスト
 ----------------------------------------*/
 
 /* アイテムナンバー */
-.card_no{
+.card_no {
+    font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'sans-serif';
     text-align: center;
-    font-size: 1.3rem;
-}/* フォントサイズはJSで変更 */
+    vertical-align: top;
+    font-size: 1.2rem;
+    grid-row: 1/2;
+    /* 子グリッドの中の一番上 */
+}
+
+/* 分類タグ */
+.item_tag,
+.item_type {
+    display: inline-block;
+    padding: 0px 10px;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+
+/* 色、テイストなど */
+.item_tag {
+    color: var(--c_white);
+    background-color: var(--c_main);
+    vertical-align: top;
+    grid-row: 2/3;
+}
+
+/* サイズ等 */
+.item_type {
+    color: var(--c_main);
+    background-color: var(--c_light-gray);
+    /* 地テキストと一緒に記載 */
+}
 
 
 /* 地テキスト */
-.cardlist p{
+.textarea_mid {
+    grid-row: 3/4;
+}
+
+.cardlist p {
     font-size: small;
     line-height: 1.7;
     padding: 2% 4% 0%;
@@ -115,18 +177,152 @@ li.card_L img{
 }
 
 
-/* 分類タグ、サイズ用ボタン */
-.item_tag,.item_type{
-    display: inline-block;
-    padding: 0px 10px;
-    border-radius: 5px;
-    line-height: 1.5;
+/*----------------------------------------
+	カードサイズ変更
+----------------------------------------*/
+
+/* Sサイズ */
+ul.cardlist_s {
+    grid-template-rows: repeat(2, auto);
+
+    /* カラム数変化 */
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(6, 1fr);
+    }
 }
-.item_tag{
-    color: var(--c_white);
+
+/* Sサイズ　テキスト調整 */
+
+.cardlist_s .textarea_mid {
+    display: none;
+}
+
+.cardlist_s .textarea_min {
+    display: none;
+}
+
+.cardlist_s .card_no {
+    grid-row: 2/3;
+    font-size: medium;
+}
+
+
+/* Mサイズ */
+ul.cardlist_m {
+
+    /* カラム数変化 */
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Mサイズ　テキスト調整 */
+.cardlist_m .textarea_min {
+    display: block;
+    /* display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3; */
+}
+
+.cardlist_m .textarea_mid {
+    display: block;
+}
+
+.cardlist_m .card_no {
+    font-size: 1.2rem;
+}
+
+
+
+/* Lサイズ */
+ul.cardlist_l {
+    /* カラム数変化 */
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.cardlist_l li.card {
+    /* 横カードレイアウトにする */
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-rows: 1;
+        grid-template-columns: 3fr 1fr;
+        align-items: center;
+    }
+    @media (min-width: 992px) {
+        display: grid;
+        grid-template-rows: 1;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+    }
+}
+
+.cardlist_l .textarea {
+    /* 右側だけ入れ子グリッド */
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+/* Lテキスト調整 */
+
+.cardlist_l .card_no {
+    font-size: 1.5rem;
+}
+.cardlist_l p{
+    font-size: medium;
+}
+
+
+/*----------------------------------------
+	ギャラリーページ用フッター
+----------------------------------------*/
+/* 下にくっついて常時表示 */
+.footer_s {
+    position: fixed;
+    bottom: 0;
+}
+
+.footer_inner_s {
+    height: 50px;
     background-color: var(--c_main);
+    color: var(--c_white);
+    text-align: center;
+    padding: 10px 0;
 }
-.item_type{
-    color: var(--c_main);
-    background-color: var(--c_light-gray);
+
+/* ホイップアイコン */
+.footer_inner_s p::before {
+    content: "";
+    display: inline-flex;
+    width: 2em;
+    height: 2em;
+    margin-right: 1vw;
+    vertical-align: middle;
+    background-image: url(../img/icon_whipcase.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(-20deg);
+}
+
+/* 外部リンク */
+.footer_inner_s a {
+    margin-left: 10px;
+    vertical-align: middle;
 }
