@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED/YAMATO's Factory</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/select_list.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/hamburger_script.js"></script>
+    <script src="../js/main.js"></script>
+
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header id="top">
+
+        <div class="header_inner">
+            <!-- ロゴ -->
+            <a href="index.html">
+                <h1 class="logo_full"><img src="img/logo_set.svg" alt="YAMATO's Factory ロゴ"></h1>
+            </a>
+
+            <!-- ナビ -->
+
+            <!-- ②アクセシブルな名前：名前が必須のbutton要素に明示的なラベルがないのでaria-labelを付与（開く／閉じるはJSで変更）-->
+            <!-- ⑥動的要素の状態：操作対象であるグロナビをaria-controlesで指定、開閉の初期状態をaria-expandedで指定-->
+            <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false">
+                <!-- ②アクセシブルな名前,④装飾的要素：今回はbutton要素自体にaria-labelを付与しているのでラインの方は隠す -->
+                <span class="hamburger__line" aria-hidden="true"></span>
+            </button>
+
+            <!-- ②アクセシブルな名前：下層にはnav要素でパンくずがあるので、aria-labelでナビゲーション名を明示 -->
+            <!-- ⑥動的要素の状態：自身の開閉状態をaria-hiddenで示すが、SPレイアウトの場合のみなのでHTMLではなくJSで動的に付与 -->
+            <nav id="gnav" class="gnav" aria-label="メインメニュー">
+                <ul class="gnav__list">
+                    <li class="gnav__item"><a href="select.html" class="gnav__link">作品を探す</a></li>
+                    <li class="gnav__item"><a href="info_first.html" class="gnav__link">はじめての方へ</a></li>
+                    <li class="gnav__item"><a href="info_buy.html" class="gnav__link">ご購入について</a></li>
+                    <li class="gnav__item"><a href="info_faq.html" class="gnav__link">お問い合わせ</a></li>
+                </ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メイン -->
+    <main>
+
+        <div class="container">
+            <div class="mini_container">
+
+                <!-- カード表示サイズ選択タブ -->
+                <div class="size_change">
+                    <span class="sub_text">view size & text volume→</span>
+                    <button class="card_s">S</button>
+                    <button class="card_m">M</button>
+                    <button class="card_l">L</button>
+                </div>
+
+                <!-- 現在選択しているテーマ -->
+                <h2 class="select_items">RED</h2>
+
+
+                <!-- カードリスト -->
+                <ul class="cardlist cardsize">
+
+                    <!-- 各カード -->
+                    <li class="card">
+                        <img src="img/items/446_r_oth.jpg" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.446</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">薔薇</span>
+                                <span class="item_tag">歯車</span>
+                                <span class="item_tag">スチームパンク</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                茶色のホイップに、赤色の薔薇、月、歯車などのパーツを装飾したスチームパンク風デザインのホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/items/431_r.JPG" alt="">
+                        <div class="textarea"><!--L横表示クラス-->
+                            <h4 class="card_no">No.431</h4>
+
+                            <p class="textarea_min"><!-- S消去クラス -->
+                                <!-- 分類タグ -->
+                                <span class="item_tag">白</span>
+                                <span class="item_tag">赤</span>
+                                <span class="item_tag">花</span>
+                                <span class="item_tag">王冠</span>
+                                <span class="item_tag">パール</span>
+                                <span class="item_tag">クリア</span>
+                            </p>
+                            <p class="textarea_mid"><!-- S消去クラス -->
+                                <!-- サイズ等 -->
+                                <span class="item_type">Size</span>
+                                B8/トレカ
+                                <span class="item_type">Type</span>
+                                縦入れ/硬質ケース<br>
+                                <span class="item_type">Detail</span>
+                                2色の白のホイップに、王冠、赤の薔薇、宝石などのパーツを装飾したホイップデコケースです。
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <!-- ページネーション -->
+                <div class="pagination">
+                    <a href="c_red_01.html">&laquo;</a>
+                    <a href="c_red_01.html">1</a>
+                    <a href="c_red_02.html">2</a>
+                    <a href="c_red_03.html" class="active">3</a>
+                    <a href="c_red_04.html">4</a>
+                    <a href="c_red_05.html">5</a>
+                    <a href="c_red_05.html">&raquo;</a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+
+    <!-- フッター -->
+    <footer class="footer_s">
+
+        <div class="footer_inner_s">
+            <p>&copy; YAMATO's FACTORY
+                <a href="https://jp.mercari.com/user/profile/426958884">
+                    <img src="img/link/mercari.png" alt="メルカリへのリンク" class="link_icon_small"></a>
+                <a href="https://x.com/yamato073">
+                    <img src="img/link/x.png" alt="Xへのリンク" class="link_icon_small"></a>
+                <a href="https://www.instagram.com/yamato_hoippu">
+                    <img src="img/link/Instagram.png" alt="" class="link_icon_small"></a>
+            </p>
+        </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

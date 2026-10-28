@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAMATO's Factory</title>
+    <title>お問い合わせについて/YAMATO's Factory</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,9 +17,13 @@
         href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/hamburger_script.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/slick.min.js"></script>
 
 </head>
 
@@ -49,7 +53,7 @@
                     <li class="gnav__item"><a href="select.html" class="gnav__link">作品を探す</a></li>
                     <li class="gnav__item"><a href="info_first.html" class="gnav__link">はじめての方へ</a></li>
                     <li class="gnav__item"><a href="info_buy.html" class="gnav__link">ご購入について</a></li>
-                    <li class="gnav__item"><a href="#top" class="gnav__link">お問い合わせ</a></li>
+                    <li class="gnav__item"><a href="info_faq.html" class="gnav__link">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -59,16 +63,31 @@
    <main>
         <div class="container">
             <!-- メインビジュアル -->
-            <div class="top_main_img">
-                <img src="img/top_main1.jpg" alt="">
+            <div id="slideshow">
+                <div class="your-class">
+                    <div><img src="img/top_main1.jpg" alt=""></div>
+                    <div><img src="img/top_main2.jpg" alt=""></div>
+                    <div><img src="img/top_main3.jpg" alt=""></div>
+                </div>
             </div>
 
             <div class="mini_container">
                 <h2 class="title info">お問い合わせについて</h2>
                 <p>
-                    トレカケースのハンドメイド作家、YAMATO のギャラリーです。<br>
-                    こちらでは今までのすべての制作物をご覧いただけます。（※現在は一部の展示のみとなっておりますが、随時更新予定です）<br>
-                    なお、すべて一点物のため展示作品には販売済みの物も含まれます。
+                    デザインのオーダーやリクエストなど、注文前のご相談を承ります。<br>
+                    また、ご不明な点などもありましたらお気軽にご相談ください。
+                </p>
+                <hr>
+                <div class="mini_box">
+                <p>
+                    <s><a href="#">→よくある質問はこちら</a></s><br>
+                    <span class="sub_small">作成中です＞＜。<a href="info_buy.html" class="st_under">ご購入について</a>のページもご確認ください。</span>
+                </p>
+                </div>
+                    <hr>
+                <p>
+                    <strong class="attention">申し訳ございませんが、現在はこのサイトからのお問い合わせは受け付けておりません。</strong><br>
+                    大変お手数ですが、ページ下部にございますメルカリ、X、Instagramなどの外部リンクよりご連絡ください。ご面倒をおかけいたしますが、ご了承いただけますようお願いいたします。
                 </p>
 
 
@@ -81,7 +100,7 @@
     <footer>
         <!-- 各リンクアイコン -->
         <div class="link_box">
-            <p class="sub_small">※各外部サイトが開きます→</p>            
+            <p class="text_small">※各外部サイトが開きます→</p>            
             <a href="https://jp.mercari.com/user/profile/426958884">
                 <img src="img/link/mercari.png" alt="メルカリへのリンク" class="link_icon"></a>
             <a href="https://x.com/yamato073">
@@ -92,7 +111,16 @@
         <div class="footer_inner"><p>&copy; YAMATO's FACTORY</p></div>
     </footer>
 
-
+<!-- スライドショー（slick） -->
+<script>
+    $(document).ready(function(){
+      $('.your-class').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000
+      });
+    });
+</script>
 
 </body>
 

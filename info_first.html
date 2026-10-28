@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAMATO's Factory</title>
+    <title>初めての方へ/YAMATO's Factory</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,10 +17,13 @@
         href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/hamburger_script.js"></script>
-    <script src="js/main.js"></script>
-
+    <script src="js/slick.min.js"></script>
 </head>
 
 <body>
@@ -59,19 +62,61 @@
     <main>
         <div class="container">
             <!-- メインビジュアル -->
-            <div class="top_main_img">
-                <img src="img/top_main1.jpg" alt="ホイップデコのケースが並んだ写真です。">
+            <div id="slideshow">
+                <div class="your-class">
+                    <div><img src="img/top_main1.jpg" alt=""></div>
+                    <div><img src="img/top_main2.jpg" alt=""></div>
+                    <div><img src="img/top_main3.jpg" alt=""></div>
+                </div>
             </div>
 
             <div class="mini_container">
                 <h2 class="title info">初めての方へ</h2>
                 <p>
-                    トレカケースのハンドメイド作家、YAMATO のギャラリーです。<br>
-                    こちらでは今までのすべての制作物をご覧いただけます。（※現在は一部の展示のみとなっておりますが、随時更新予定です）<br>
-                    なお、すべて一点物のため展示作品には販売済みの物も含まれます。
+                    ご覧頂きありがとうございます！<br>
+                    こちらはハンドメイド作家、YAMATO のギャラリーです。ホイップデコケースを主に作成しています。<br>
+                    可愛いキレイが大好きで、それを作品にこめたいと思い作成しています。まだまだ初心者ですが、一つ一つ丁寧に作成しています。<br>
+                    ぜひ推し活のおともに❤️<br>
                 </p>
 
-                
+                <h2 class="title info">ホイップデコケースって？</h2>
+                <p>
+                    硬質のカードケースの周囲に、シリコン製のホイップクリームを使って装飾を施したものです。お好きなカードやお気に入りの写真を入れて、飾って楽しむことができます。<br>
+                    当サイトではB8（トレーディングカード）サイズのものが多いですが、ご依頼いただければ別のサイズについても対応可能です。また、持ち歩き用パーツの追加も可能です。<br>
+                    まずはご相談ください。
+                </p>
+
+                <h2 class="title info">当サイトについて</h2>
+                <p>
+                    今までに制作したすべての作品を展示しています。<span class="text_small">（※現在は一部の展示のみとなっておりますが、随時更新予定です）</span><br>
+                    なお、すべて一点物のため、展示作品には販売済みの物も含まれます。
+                </p>
+                <p>
+                    <strong class="st_under">新作の告知はSNSで行っております♪</strong>
+                    </p><p>
+                    当サイトは過去作をメインとしたギャラリーのため、新作についてはSNSをご覧いただく方が確実です。
+
+                </p>
+                <div class="mini_box">
+                        Xのアカウント<br>
+                        <a href="https://x.com/yamato073">@yamato073
+                            <img src="img/link/x.png" alt="Xへのリンク" class="link_icon_small"></a><br>
+
+                        Instagramのアカウント<br>
+                        <a href="https://www.instagram.com/yamato_hoippu">yamato_hoippu
+                            <img src="img/link/Instagram.png" alt="Instagramへのリンク" class="link_icon_small"></a>
+                </div>
+
+                <h2 class="title info">当サイトの目的</h2>
+                <p>
+                    今まで作品の展示、販売をすべてメルカリ上で行っていたため、作品や事務ページが増えてきたことにより一覧性が悪くなってきてしまいました。<br>
+                    また、そちらでは作品の絞り込みが難しく、自身のページ内では販売中の作品しか絞り込むことができません。
+                    </p><p>
+                    そこで、今までの作品を展示してギャラリーとして使用しつつ、販売済みとなっている作品でも、もし気に入っていただけたらオーダーやリクエストをお請けできるようにと、この場を設けました。
+                    </p><p>
+                    あなたの大切な推しのための、ケース探しのお役に立てれば幸いです✨
+                </p>
+
 
                 <h2 id="buy" class="title info">ご購入について</h2>
                 <p>
@@ -91,18 +136,29 @@
     <footer>
         <!-- 各リンクアイコン -->
         <div class="link_box">
-            <p class="sub_small">※各外部サイトが開きます→</p>            
+            <p class="text_small">※各外部サイトが開きます→</p>
             <a href="https://jp.mercari.com/user/profile/426958884">
                 <img src="img/link/mercari.png" alt="メルカリへのリンク" class="link_icon"></a>
             <a href="https://x.com/yamato073">
                 <img src="img/link/x.png" alt="Xへのリンク" class="link_icon"></a>
             <a href="https://www.instagram.com/yamato_hoippu">
-                <img src="img/link/Instagram.png" alt="" class="link_icon"></a>
+                <img src="img/link/Instagram.png" alt="Instagramへのリンク" class="link_icon"></a>
         </div>
-        <div class="footer_inner"><p>&copy; YAMATO's FACTORY</p></div>
+        <div class="footer_inner">
+            <p>&copy; YAMATO's FACTORY</p>
+        </div>
     </footer>
 
-
+<!-- スライドショー（slick） -->
+<script>
+    $(document).ready(function(){
+      $('.your-class').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000
+      });
+    });
+</script>
 
 </body>
 

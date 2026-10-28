@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAMATO's Factory</title>
+    <title>ご購入について/YAMATO's Factory</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,9 +17,13 @@
         href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/hamburger_script.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/slick.min.js"></script>
 
 </head>
 
@@ -47,13 +51,17 @@
             <nav id="gnav" class="gnav" aria-label="メインメニュー">
                 <ul class="gnav__list">
                     <li class="gnav__item">
-                        <a href="select.html" class="gnav__link">作品を探す</a></li>
+                        <a href="select.html" class="gnav__link">作品を探す</a>
+                    </li>
                     <li class="gnav__item">
-                        <a href="info_first.html" class="gnav__link">はじめての方へ</a></li>
+                        <a href="info_first.html" class="gnav__link">はじめての方へ</a>
+                    </li>
                     <li class="gnav__item">
-                        <a href="info_buy.html" class="gnav__link">ご購入について</a></li>
+                        <a href="info_buy.html" class="gnav__link">ご購入について</a>
+                    </li>
                     <li class="gnav__item">
-                        <a href="info_faq.html" class="gnav__link">お問い合わせ</a></li>
+                        <a href="info_faq.html" class="gnav__link">お問い合わせ</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -63,8 +71,12 @@
     <main>
         <div class="container">
             <!-- メインビジュアル -->
-            <div class="top_main_img">
-                <img src="img/top_main1.jpg" alt="">
+            <div id="slideshow">
+                <div class="your-class">
+                    <div><img src="img/top_main1.jpg" alt=""></div>
+                    <div><img src="img/top_main2.jpg" alt=""></div>
+                    <div><img src="img/top_main3.jpg" alt=""></div>
+                </div>
             </div>
 
             <div class="mini_container">
@@ -72,22 +84,49 @@
                 <h2 id="buy" class="title info">ご購入について</h2>
                 <p>
                     <strong class="attention">作品の販売はメルカリにて行っております。</strong><br>
-                    大変お手数ですが、メルカリを通してご購入をお願いいたします。<br>
+                    大変お手数ですが、<strong><a href="https://jp.mercari.com/user/profile/426958884">メルカリ<img
+                                src="img/link/mercari.png" alt="メルカリへのリンク"
+                                class="link_icon_small"></a></strong>を通してご購入をお願いいたします。<br>
                     なお、作品の販売状況について当サイトとは連携しておりません。販売済みの場合もございますので、あらかじめご了承ください。<br>
-                    ただし、<strong class="st_under">ギャラリー内の作品番号とメルカリの作品番号は同一</strong>のため、お探しの際にお役立ていただければ幸いです。
+                    ただし、<strong class="st_under">ギャラリー内の作品番号とメルカリの作品番号は同一</strong>としているため、メルカリにてお探しの際にお役立ていただければ幸いです。
+                </p>
+
+                <h2 id="buy" class="title info">ギャラリーと同じ番号がメルカリにない…</h2>
+                <p>
+                    おまとめ購入などの依頼があった場合、同一番号の商品ページがメルカリから消えている場合があります。その際は販売済みとなりますのでご了承ください。
                 </p>
 
                 <h2 id="buy" class="title info">欲しいデザインが売り切れの時は？</h2>
                 <p>
-                    同一デザインのものをリクエストすることができます。<br>
-                    <strong class="st_under">※ただし、ハンドメイドであることと、パーツや素材の在庫状況により、全く同じになるとは限りません。あらかじめご了承ください。</strong>
+                    同一デザインのものをリクエストすることができます。（必ずご対応できるとは限りません）
                 </p>
 
-                <h2 id="buy" class="title info">色違いや推しに合わせたデザインが欲しい！</h2>
+                <h2 id="buy" class="title info">同じものの色違いや、推しに合わせたケースが欲しい！</h2>
                 <p>
-                    お好みのデザインの色違いや、推しやお好みに合わせたフルオーダーのデザインも承ります。お気軽にご相談ください。<br>
-                    <a href="info_faq.html">→お問い合わせはこちら</a>
+                    色違いデザイン、推しやお好みに合わせたフルオーダーのデザインも承ります。お気軽にご相談ください。
                 </p>
+                <div class="mini_box">
+                    <strong class="st_under">オーダーについてのご注意</strong>
+                    <p class="text_small">
+                        同一デザインのリクエスト、色違いなどのすべてのオーダーにおいて、完全にご希望通りのデザインになるとは限りません。<br>
+                        ハンドメイド作品であること、また、パーツや素材の在庫状況により、多少の個体差が生じることがございます。（その際はご相談しながら制作いたします）<br>
+                        あらかじめご了承ください。
+                    </p>
+                </div>
+                <div class="mini_box">
+                    <strong class="st_under">その他のご注意</strong>
+                    <div class="text_small">
+                        <p>
+                        喫煙はしておりませんが、猫を飼っています。アレルギーや気になる方はご遠慮下さい。
+                        </p><p>
+                        ハンドメイドのため形の歪みや埃の混入、また初期から付いている小さなキズ等がある場合がございます。ご了承の上ご購入お願いします。</p><p>
+                        シリコンシーラントを使用しているため匂いが気になる場合は、風通しの良い場所で保管して下さい。</p><p>パーツが取れてしまった場合には、お手数ですが接着剤等で修正をお願いします。</p>
+                    </div>
+                </div>
+                <p>
+                    <a href="info_faq.html" class="st_under">→お問い合わせはこちら</a>
+                </p>
+
 
 
             </div>
@@ -99,18 +138,29 @@
     <footer>
         <!-- 各リンクアイコン -->
         <div class="link_box">
-            <p class="sub_small">※各外部サイトが開きます→</p>            
+            <p class="text_small">※各外部サイトが開きます→</p>
             <a href="https://jp.mercari.com/user/profile/426958884">
                 <img src="img/link/mercari.png" alt="メルカリへのリンク" class="link_icon"></a>
             <a href="https://x.com/yamato073">
                 <img src="img/link/x.png" alt="Xへのリンク" class="link_icon"></a>
             <a href="https://www.instagram.com/yamato_hoippu">
-                <img src="img/link/Instagram.png" alt="" class="link_icon"></a>
+                <img src="img/link/Instagram.png" alt="Instagramへのリンク" class="link_icon"></a>
         </div>
-        <div class="footer_inner"><p>&copy; YAMATO's FACTORY</p></div>
+        <div class="footer_inner">
+            <p>&copy; YAMATO's FACTORY</p>
+        </div>
     </footer>
 
-
+    <!-- スライドショー（slick） -->
+    <script>
+        $(document).ready(function () {
+            $('.your-class').slick({
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+    </script>
 
 </body>
 
