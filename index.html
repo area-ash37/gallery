@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAMATO's Factory</title>
+    <link rel="icon" href="favicon.png">
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -64,7 +65,7 @@
     <main>
         <div class="container">
             <!-- メインビジュアル -->
-             
+
             <div id="slideshow">
                 <div class="your-class">
                     <div><img src="img/top_main1.jpg" alt=""></div>
@@ -78,23 +79,37 @@
 
             <!-- メイン -->
             <div class="mini_container">
-                <h2 class="title info">当サイトについて</h2>
+                <h2 class="title info">YAMATO's Factoryへようこそ💕</h2>
                 <p>
                     ハンドメイドのホイップデコ作家、YAMATO のギャラリーです。<br>
-                    硬質のカードケースを使用したホイップデコが主な作品です。今まで制作したすべての作品をご覧いただけます。<br>
-                    <span class="text_small">（※現在は一部の展示のみとなっておりますが、随時更新予定です）</span><br>
+                    硬質のカードケースを使用したホイップデコが主な作品です。今まで制作したすべての作品をご覧いただけます。<span
+                        class="text_small">（※現在は一部の展示のみとなっておりますが、随時更新予定です）</span><br>
                     なお、すべて一点物のため、展示作品には販売済みの物も含まれます。
                 </p>
 
+                <div class="mini_box">
+                    <p>
+                        当サイトは過去作の展示が主な目的のため、新作の告知はSNSをご覧いただく方が確実です✨
+                    </p>
+                    Xのアカウント<br>
+                    <a href="https://x.com/yamato073">@yamato073
+                        <img src="img/link/x.png" alt="Xへのリンク" class="link_icon_small"></a><br>
+
+                    Instagramのアカウント<br>
+                    <a href="https://www.instagram.com/yamato_hoippu">yamato_hoippu
+                        <img src="img/link/Instagram.png" alt="Instagramへのリンク" class="link_icon_small"></a>
+                </div>
+
                 <section>
-                    <h2 id="color_select" class="title pic">メインカラーから選ぶ</h2>
+                    <h2 id="color_select" class="title pic">メインカラーから探す</h2>
                     <ul class="colors">
                         <li><a href="c_red_01.html"><img src="img/color/color_red.png" alt="">red</a></li>
                         <li><a href="c_orange_01.html"><img src="img/color/color_orange.png" alt="">orange</a></li>
                         <li><a href="c_yellow_01.html"><img src="img/color/color_yellow.png" alt="">yellow</a></li>
                         <li><a href="c_green_01.html"><img src="img/color/color_green.png" alt="">green</a></li>
                         <li><a href="c_blue_01.html"><img src="img/color/color_blue.png" alt="">blue</a></li>
-                        <li><a href="c_lightblue_01.html"><img src="img/color/color_lightblue.png" alt="">light blue</a></li>
+                        <li><a href="c_lightblue_01.html"><img src="img/color/color_lightblue.png" alt="">light blue</a>
+                        </li>
                         <li><a href="c_purple_01.html"><img src="img/color/color_purple.png" alt="">purple</a></li>
                         <li><a href="c_pink_01.html"><img src="img/color/color_pink.png" alt="">pink</a></li>
                         <li><a href="c_brown_01.html"><img src="img/color/color_brown.png" alt="">brown</a></li>
@@ -106,7 +121,7 @@
                     </ul>
                 </section>
 
-                <h2 id="t_select" class="title pic">テイストから選ぶ</h2>
+                <h2 id="t_select" class="title pic">テイストから探す</h2>
                 <section>
                     <div class="mini_box">
                         <ul class="taste">
@@ -115,7 +130,7 @@
                     </div>
                 </section>
 
-                <h2 id="m_select" class="title pic">モチーフから選ぶ</h2>
+                <h2 id="m_select" class="title pic">モチーフから探す</h2>
                 <section>
                     <div class="mini_box">
                         <ul class="motif">
@@ -154,21 +169,23 @@
                 <img src="img/link/Instagram.png" alt="" class="link_icon"></a>
         </div>
         <div class="footer_inner">
-            <p>&copy; YAMATO's FACTORY</p>
+            <a href="#top" class="white">
+                <p>&copy; YAMATO's FACTORY</p>
+            </a>
         </div>
     </footer>
 
 
-<!-- スライドショー（slick） -->
-<script>
-    $(document).ready(function(){
-      $('.your-class').slick({
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000
-      });
-    });
-</script>
+    <!-- スライドショー（slick） -->
+    <script>
+        $(document).ready(function () {
+            $('.your-class').slick({
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+    </script>
 
 
 </body>
