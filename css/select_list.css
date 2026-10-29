@@ -38,8 +38,8 @@ h2.select_items {
     font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'sans-serif';
     font-size: 1.5rem;
     line-height: 1.7em;
-    border-top: dotted var(--c_accent) 4px;
-    border-bottom: dotted var(--c_accent) 4px;
+    border-top: dotted var(--c_light-gray) 4px;
+    border-bottom: dotted var(--c_light-gray) 4px;
     color: var(--c_main);
     text-align: center;
     margin-top: 2vw;
@@ -168,12 +168,14 @@ li .textarea {
 /* 地テキスト */
 .textarea_mid {
     grid-row: 3/4;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 
 .cardlist p {
     font-size: small;
     line-height: 1.7;
-    padding: 2% 4% 0%;
+    padding: 0% 5% 0%;
     display: block;
 }
 

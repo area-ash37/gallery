@@ -71,6 +71,12 @@ a {
   text-decoration: none;
 }
 
+a.white{
+  font-family: 'Kosugi Maru', 'sans-serif';
+  font-weight: 400;
+  color: var(--c_white);
+}
+
 a:hover {
   color: var(--c_accent);
 }
